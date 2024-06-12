@@ -4,7 +4,8 @@ import os
 BIRD_IMGS=[pygame.transform.scale2x(pygame.image.load(os.path.join("imgs","bird" + str(x) + ".png"))) for x in range(1,4)]
 
 class Bird:
-
+    #model for the bird
+    
     IMGS=BIRD_IMGS
     MAX_ROTATION=25
     ROT_VEL=20
