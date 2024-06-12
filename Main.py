@@ -6,8 +6,6 @@ from Pipe import Pipe
 from Base import Base
 pygame.font.init()
 
-
-
 WIN_WIDTH=500
 WIN_HEIGHT=800
 BG_IMG=pygame.transform.scale2x(pygame.image.load(os.path.join("imgs","bg.png")))
