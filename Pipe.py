@@ -5,6 +5,8 @@ import os
 PIPE_IMG=pygame.transform.scale2x(pygame.image.load(os.path.join("imgs","pipe.png")))
 
 class Pipe:
+    #class for obstacles that bird should avoid
+    
     GAP=200
     VEL=5
 
@@ -32,6 +34,8 @@ class Pipe:
         win.blit(self.PIPE_BOTTOM,(self.x,self.bottom))
     
     def colide(self,bird):
+        #checks for collision with the pipe
+        
         bird_mask=bird.get_mask()
         top_mask=pygame.mask.from_surface(self.PIPE_TOP)
         bottom_mask=pygame.mask.from_surface(self.PIPE_BOTTOM)
