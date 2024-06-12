@@ -4,7 +4,7 @@ import neat
 from Bird import Bird
 from Pipe import Pipe
 from Base import Base
-pygame.font.init()
+pygame.font.init() #initiation of font for score tracking
 
 WIN_WIDTH=500
 WIN_HEIGHT=800
@@ -12,6 +12,7 @@ BG_IMG=pygame.transform.scale2x(pygame.image.load(os.path.join("imgs","bg.png"))
 STAT_FONT=pygame.font.SysFont("comicsans",50)
 
 def draw_window(win,birds, pipes, base,score ):
+    #window display for the game
     win.blit(BG_IMG,(0,0))
 
     for pipe in pipes:
@@ -108,6 +109,7 @@ def main(genomes,config):
         draw_window(win,birds,pipes,base,score)
 
 def run(config_path):
+    #NEAT algorithm for training neural network in order to perform obstacle avoidance
     config=neat.config.Config(neat.DefaultGenome,neat.DefaultReproduction,
         neat.DefaultSpeciesSet,neat.DefaultStagnation,config_path)
     
@@ -119,6 +121,7 @@ def run(config_path):
     winner=population.run(main,50)
 
 if __name__ =="__main__":
+    #Ensures that script runs regardless of the worikng directory
     local_dir=os.path.dirname(__file__)
     config_path=os.path.join(local_dir,"requisites.txt")
     run(config_path)
